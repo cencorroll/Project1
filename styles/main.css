@@ -14,6 +14,8 @@ body {
 #text {
   text-align: center;
   margin-left: 100px;
+  width: 450px;
+  max-width: 100%;
 }
 
 #grid {
@@ -53,11 +55,13 @@ h3 {
 }
 
 #result {
-  font-size: 3em;
+  font-size: 2em;
   padding: 25px 0px;
   animation-name: allthecolors;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
+  width: 450px;
+  max-width: 100%;
 }
 
 #playersturn{

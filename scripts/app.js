@@ -160,6 +160,8 @@ function init() {
         result.innerHTML = `${players[0].name} Wins!`
         endOfGame.innerHTML = 'Press restart to play again'
         canPlay = false
+        const playerturntext = document.querySelector('#playersturn')
+        playerturntext.remove()
       }
       // check the cells to see if they all have the class of player2
       if (
@@ -171,6 +173,8 @@ function init() {
         result.innerHTML = `${players[1].name} Wins!`
         endOfGame.innerHTML = 'Press restart to play again'
         canPlay = false
+        const playerturntext = document.querySelector('#playersturn')
+        playerturntext.remove()
       }
     }
   }
