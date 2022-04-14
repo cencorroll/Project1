@@ -7,19 +7,22 @@
 <link rel="stylesheet" href="styles/main.css">
 <script src="scripts/app.js" charset="utf-8"></script>
   <head>
+    <title>Connect 4</title>
   </head>
   <body>
-    <h1>CONNECT 4</h1>
-    <h3>By Abdallah Harun</h3>
-    <div id="result"></div>
-    <p><span id="playerturn"></span>'s turn!</p>
     <div class="grid-wrapper">
       <!-- Grid container -->
       <div id="grid">
         <!-- Grid items will go here -->
       </div>
     </div>
-    <h2 id="endofgame"></h2>
+    <div id="text">
+    <h1>CONNECT 4</h1>
+    <h3>By Abdallah Harun</h3>
+    <div id="result"></div>
+    <p id="playersturn"><span id="playerturn"></span>'s turn!</p>
+    <p id="endofgame"></p>
     <button onClick="window.location.reload();">Restart</button>
+    </div>
   </body>
 </html>
