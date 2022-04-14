@@ -134,9 +134,9 @@ function init() {
       }
 
       currentPlayer = currentPlayer === 1 ? 2 : 1 // this works
-      playerturn.innerHTML = `${players[currentPlayer].name}`
-      cells[lastIndex].classList.add('playerpiece',players[currentPlayer].className) // this needs to add the class of the current player
-      setTimeout(checkBoard, 1000)
+      playerturn.innerHTML = `${players[currentPlayer].name}` 
+      cells[lastIndex].classList.add('playerpiece',players[currentPlayer].className)
+      checkBoard()
     }
   }
   
@@ -157,12 +157,9 @@ function init() {
         count3.classList.contains('player1') &&
         count4.classList.contains('player1')
       ) {
-        setTimeout(() => {
-          result.innerHTML = `${players[1].name} Wins!`
-          endOfGame.innerHTML = 'Press restart to play again'
-          canPlay = false
-        })
-        setTimeout(1000)
+        result.innerHTML = `${players[0].name} Wins!`
+        endOfGame.innerHTML = 'Press restart to play again'
+        canPlay = false
       }
       // check the cells to see if they all have the class of player2
       if (
@@ -171,12 +168,9 @@ function init() {
         count3.classList.contains('player2') &&
         count4.classList.contains('player2')
       ) {
-        setTimeout(() => {
-          result.innerHTML = `${players[2].name} Wins!`
-          endOfGame.innerHTML = 'Press restart to play again'
-          canPlay = false
-        })
-        setTimeout(1000)
+        result.innerHTML = `${players[1].name} Wins!`
+        endOfGame.innerHTML = 'Press restart to play again'
+        canPlay = false
       }
     }
   }
