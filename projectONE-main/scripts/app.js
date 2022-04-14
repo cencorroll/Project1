@@ -4,10 +4,11 @@ function init() {
   const height = 6
   const cellCount = width * height
   const cells = []
-  let currentPlayer = 1 // should be first player first
+  let currentPlayer = 1
   const result = document.querySelector('#result')
-  const reset = document.querySelector('#reset')
+  const endOfGame = document.querySelector('#endofgame')
   let canPlay = true
+  const playerturn = document.querySelector('#playerturn')
 
   const winArray = [
     [0, 1, 2, 3],
@@ -91,8 +92,11 @@ function init() {
       name: window.prompt('Player 2 name:'),
     },
   }
+  playerturn.innerHTML = `${players[currentPlayer].name}`
+
 
   // ! Function to create a grid
+
   // ? Grid Creation
   // Create all the cells of our grid by looping through the cell count
   // The cells will be added to the cells array when they are created
@@ -107,6 +111,7 @@ function init() {
     }
     console.log('the grid is created')
   }
+
 
   // ! Function for when the player clicks on anywhere within the grid
 
@@ -129,20 +134,14 @@ function init() {
       }
 
       currentPlayer = currentPlayer === 1 ? 2 : 1 // this works
-      const playerturn = document.querySelector('#playerturn')
       playerturn.innerHTML = `${players[currentPlayer].name}`
       cells[lastIndex].classList.add('playerpiece',players[currentPlayer].className) // this needs to add the class of the current player
-      // colorMatches(cells[lastIndex])
       setTimeout(checkBoard, 1000)
     }
   }
   
+
   // ! Function to check for a row of 4
-  // function colorMatches(target){
-  //   console.log(target)
-  //   console.log(target.dataset.row)
-  //   const row = document.querySelectorAll(`[data-row="${5}"]`)
-  // }
 
   function checkBoard() {
     for (let i = 0; i < winArray.length; i++) {
@@ -160,12 +159,12 @@ function init() {
       ) {
         setTimeout(() => {
           result.innerHTML = `${players[1].name} Wins!`
-          reset.innerHTML = 'Press restart to play again'
+          endOfGame.innerHTML = 'Press restart to play again'
           canPlay = false
         })
         setTimeout(1000)
       }
-      //check the cells to see if they all have the class of player2
+      // check the cells to see if they all have the class of player2
       if (
         count1.classList.contains('player2') &&
         count2.classList.contains('player2') &&
@@ -174,7 +173,7 @@ function init() {
       ) {
         setTimeout(() => {
           result.innerHTML = `${players[2].name} Wins!`
-          reset.innerHTML = 'Press restart to play again'
+          endOfGame.innerHTML = 'Press restart to play again'
           canPlay = false
         })
         setTimeout(1000)

@@ -26,7 +26,7 @@ body {
 #grid div {
   height: 97px;
   width: 97px;
-  border: 1px solid darkblue;
+  border: 1px solid #00008b8c;
 }
 
 h1, h3 {
@@ -38,7 +38,7 @@ h1 {
   margin-bottom: 20px;
   font-size: 3em;
   animation-name: textcolor;
-  animation-duration: 1s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
 }
 
@@ -46,8 +46,30 @@ h3 {
   color: black;
 }
 
-.playerpiece {
-  width: 80%; /* this is not working. the piece stretches to the edge of the cell*/
+#result {
+  font-size: 3em;
+  padding: 25px 0px;
+  animation-name: allthecolors;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+p{
+  font-weight: bold;
+  animation-name: textcolor;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  margin-bottom: 12px;
+  margin-top: 5px;
+  font-size: 1.5em;
+}
+
+#endofgame {
+  animation-name: allthecolors;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .playerpiece.player1 {
@@ -64,21 +86,22 @@ h3 {
   background-size: cover;
 }
 
-p{
-  font-weight: bold;
-  font-size: 2em;
-  animation-name: textcolor;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+@keyframes textcolor {
+  0% {color: red;}
+  50% {color: blue;}
+  100% {color: red;}
 }
 
-@keyframes textcolor {
-  from {color: red;}
-  to {color: blue;}
+@keyframes allthecolors{
+  0% {color: rgb(255, 123, 0);}
+  25% {color: rgb(236, 8, 217);}
+  50% {color: green;}
+  75% {color: purple;}
+  100% {color: red;}
 }
 
 button {
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 20px;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.3em;
